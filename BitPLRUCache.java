@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BitPLRUCache extends AbstractCache {
-    List<Integer> bits;
+    private List<Integer> bits;
 
     public BitPLRUCache(int cacheLineCount, int cacheLineSize, int cacheWay, Bus cacheRAM, int cacheHitDelay,
                         int cacheMissDelay) {

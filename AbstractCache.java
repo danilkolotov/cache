@@ -7,7 +7,7 @@ abstract class AbstractCache {
     private final Bus RAMBus;
     private final int cacheHitDelay;
     private final int cacheMissDelay;
-    protected List<Integer> lines;
+    private List<Integer> lines;
     private int hits, misses;
 
     public AbstractCache(int cacheLineCount, int cacheLineSize, int cacheWay, Bus RAMBus, int cacheHitDelay, int cacheMissDelay) {
@@ -64,7 +64,7 @@ abstract class AbstractCache {
         return (double) hits / (hits + misses);
     }
 
-    public <T> List<T> getSet(List<T> list, int index) {
+    protected <T> List<T> getSet(List<T> list, int index) {
         int start = (index / cacheWay) * cacheWay;
         return list.subList(start, start + cacheWay);
     }
